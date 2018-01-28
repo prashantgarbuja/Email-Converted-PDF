@@ -17,6 +17,10 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+/**
+ * Created by Prashant on 12/07/2017.
+ */
+
 public class EmailPdf {
 	private static Session session;
 	
@@ -25,12 +29,12 @@ public class EmailPdf {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.host", "smtp.gmail.com"); //provide smtp host. Here I am using gmail.
         props.put("mail.smtp.port", "587");
 
         session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("demoproject0077", "createapassword");
+                return new PasswordAuthentication("provide sender's email", "provide sender's password");
             }
         });
         session.setDebug(true); //trace the execution of session.
@@ -38,7 +42,7 @@ public class EmailPdf {
 	
 	public static void sendMail(String pdf_file,String email) throws MessagingException {
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("demoproject0077"));
+        message.setFrom(new InternetAddress("provide sender's email as provided above"));
         message.setRecipients(Message.RecipientType.TO,
         InternetAddress.parse(email)); //email of recepient
         message.setSubject("Advice of Credit"); //Subject of email.
@@ -65,5 +69,5 @@ public class EmailPdf {
         	 File file = new File(pdf_file); 
         	file.delete(); //Delete file after send has been successful.
         }
-      }
-	}
+    }
+}
