@@ -17,4 +17,4 @@
 ![pdf](https://github.com/prashantgarbuja/Email-Converted-PDF/blob/master/convertpdf.jpg)
 
 <h3>Send Email</h3>
-<p>The converted pdf document is automatically send email to respective merchant.</p>
+<p>The converted pdf document is automatically send to respective merchant via email.</p>
