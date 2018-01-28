@@ -15,6 +15,10 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.SqlDateModel;
 
+/**
+ * Created by Prashant on 12/07/2017.
+ */
+
 public class DateDisplay extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
@@ -50,7 +54,7 @@ public class DateDisplay extends JFrame implements ActionListener {
 		//To Date
 		JLabel label1 = new JLabel("To Date : ");
 		label1.setBounds(19, 71, 83, 14);
-        getContentPane().add(label1);
+        	getContentPane().add(label1);
 		 
 		SqlDateModel model1 = new SqlDateModel();
 		model1.setDate(2018, 1, 5);
@@ -94,12 +98,12 @@ public class DateDisplay extends JFrame implements ActionListener {
         java.sql.Date selectedToDate = (java.sql.Date) datePicker1.getModel().getValue();
        
         try {
-				ConvertToPdf.query(selectedFromDate,selectedToDate); //call query method from ConvertTpPdf class.
-				JOptionPane.showMessageDialog(this,"SUCCESSFULLY EXECUTED");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				JOptionPane.showMessageDialog(this,"ERROR!!!");
-			}
+		ConvertToPdf.query(selectedFromDate,selectedToDate); //call query method from ConvertTpPdf class.
+		JOptionPane.showMessageDialog(this,"SUCCESSFULLY EXECUTED");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(this,"ERROR!!!");
+		}
 	}
 }
