@@ -228,7 +228,7 @@ public class ConvertToPdf {
             		doc.add(new Paragraph("*****  This is the System generated Advice. Hence no signature is required.").setPaddingLeft(20).setFontSize(9));
             		doc.close();
         		try {
-				EmailPdf.sendMail(filename,"luffy92dragon@gmail.com"); //Send Mail.
+				EmailPdf.sendMail(filename,rs.getString("EMAIL_ID")); //Send Transaction Details to respective email of merchant.
 		   	    } catch (MessagingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
